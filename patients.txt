@@ -1,0 +1,16 @@
+Petra, 646, NYU
+Lara, 212, NYU
+Maria, 787, COL
+Petra, 123, NYU
+Petra, 999, NYU
+Daniel, 892, NYU
+Lucy, 901, COL
+John,729,NYU
+Christina,239,NYU
+john ,123,NYU
+Naina,725,NYU
+Jiro,781,NYU
+Dan,123,NYU
+,,NYU
+petra,678,NYU
+petra,23434,NYU

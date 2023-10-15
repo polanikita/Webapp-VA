@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_caly.css') }}">
+</head>
+<body>
+    <form method="post" action="{{ url_for('caly') }}">
+        <button type="submit" class="button" name="action" value="caly">Calendar</button>
+    </form>
+</body>
+</html>

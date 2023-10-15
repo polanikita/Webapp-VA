@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 250px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 650px;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: auto;
+}
+
+.title {
+    width: 600px;
+    height: auto;
+}
+
+.gif {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 40px;
+}
+
+.password-field {
+    margin-top: 20px;
+}
+
+.clinic-id-field {
+    margin-top: 20px;
+}

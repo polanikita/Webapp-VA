@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_welcome.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_new.png') }}" alt="Logo" class="logo">
+    <img src="{{ url_for('static', filename='VA.jpg') }}" alt="Title" class="title">
+    <img src="{{ url_for('static', filename='wave.gif') }}" alt="Wave" class="gif">
+
+    <div class="welcome-message">Welcome {{ clinic_id }}!</div>
+
+    <div class="button-container">
+        <div class="button-row">
+            <form method="post" action="{{ url_for('patient_charts') }}">
+                <button type="submit" class="button" name="action" value="patient_charts">Patient Chart</button>
+            </form>
+            <form method="get" action="{{ url_for('view_profile') }}">
+                <button type="submit" class="button" name="action" value="view_profile">View Profile</button>
+            </form>
+        </div>
+        <div class="button-row">
+            <form method="post" action="{{ url_for('scheduled_calls') }}">
+                <button type="submit" class="button" name="action" value="cscheduled_calls">Scheduled Calls</button>
+            </form>
+            <form method="post" action="{{ url_for('record_audio') }}">
+                <button type="submit" class="button" name="action" value="record_audio">Record Audio</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

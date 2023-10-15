@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_new.png') }}" alt="Logo" class="logo">
+    <img src="{{ url_for('static', filename='VA.jpg') }}" alt="Title" class="title">
+    <img src="{{ url_for('static', filename='wave.gif') }}" alt="Wave" class="gif">
+    <form method="post">
+        <label for="clinic_id" class="clinic-id-field">Enter Clinic ID:</label>
+        <input type="text" id="clinic_id" name="clinic_id">
+        <label for="password" class="password-field">Enter Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+    </form>
+    <p class="error-message">{{ error_message }}</p>
+</body>
+</html>

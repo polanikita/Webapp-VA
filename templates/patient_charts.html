@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_welcome.css') }}">
+    <title>Patient Chart</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        canvas {
+            background-color: black; 
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_new.png') }}" alt="Logo" class="logo">
+    <br><br><br> 
+    <canvas id="patientChart" width="400" height="200"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+       
+        const heartRateData = [
+            { date: '2023-09-01', rate: 75 },
+            { date: '2023-09-02', rate: 78 },
+            { date: '2023-09-03', rate: 82 },
+            { date: '2023-09-04', rate: 88 },
+            { date: '2023-09-05', rate: 92 },
+        ];
+
+        
+        const dates = heartRateData.map(data => data.date);
+        const rates = heartRateData.map(data => data.rate);
+
+       
+        const canvas = document.getElementById('patientChart');
+
+        
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: 'Heart Rate',
+                    data: rates,
+                    borderColor: 'rgba(0, 123, 255, 1)', 
+                    borderWidth: 2,
+                    fill: false,
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Heart Rate',
+                            fontSize: 16, 
+                            color: 'white', 
+                        },
+                        ticks: {
+                            color: 'white', 
+                        },
+                        grid: {
+                            color: 'rgba(192, 192, 192, 0.5)', 
+                            borderColor: 'rgba(128, 128, 128, 0.5)',
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date Recorded',
+                            fontSize: 16, 
+                            color: 'white', 
+                        },
+                        ticks: {
+                            color: 'white',
+                        },
+                        grid: {
+                            color: 'rgba(192, 192, 192, 0.5)',
+                            borderColor: 'rgba(128, 128, 128, 0.5)', 
+                        }
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>

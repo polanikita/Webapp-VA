@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: auto;
+}
+
+.title {
+    width: 600px;
+    height: auto;
+}
+
+.gif {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 40px;
+}
+
+.name-field {
+    margin-top: 20px;
+}
+
+.phone-number-field {
+    margin-top: 20px;
+}
+
+/* Add more CSS rules as needed for styling other elements */

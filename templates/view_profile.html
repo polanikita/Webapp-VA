@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_welcome.css') }}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .user-profile {
+            text-align: center;
+            padding: 50px;
+            border-radius: 10px;
+            background-color: #222;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        .user-icon {
+            font-size: 70px;
+            color: #007bff; 
+        }
+
+
+        .section-header {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #007bff;
+        }
+
+        .user-details {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+       
+        .change-password-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .change-password-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_new.png') }}" alt="Logo" class="logo">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="user-profile">
+        
+        <div class="user-icon">
+            <h3>NYU</h3>
+            <img src="{{ url_for('static', filename='nyulogo.png') }}"
+            width="200" 
+            height="200">
+
+        </div>
+
+        <br><br><br>
+        <div class="user-details">
+            <div class="section-header">User Profile Information</div>
+            <p><strong>Date of Birth:</strong> January 1, 1990</p>
+            <p><strong>Email Address:</strong> nyu@example.com</p>
+            <p><strong>Contact Phone Number:</strong> +1 (123) 456-7890</p>
+        </div>
+
+        <div class="user-details">
+            <div class="section-header">Vital Audio Stats</div>
+            <p><strong>Calls Completed:</strong> 22</p>
+            <p><strong>Highest Heart Rate Recorded:</strong> 120 BPM</p>
+            <p><strong>Lowest Heart Rate Recorded:</strong> 60 BPM</p>
+            <p><strong>Average Heart Rate Recorded:</strong> 80 BPM</p>
+        </div>
+
+        <div class="user-details">
+            <div class="section-header">Emergency Contact Information</div>
+            <p><strong>Emergency Contact Name:</strong> John Doe</p>
+            <p><strong>Emergency Contact Relation:</strong> Friend</p>
+            <p><strong>Emergency Contact Phone Number:</strong> +1 (987) 654-3210</p>
+        </div>
+
+        <button class="change-password-button">Change Password</button>
+    </div>
+</body>
+</html>

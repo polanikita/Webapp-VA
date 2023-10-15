@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='scheduled_calls.css') }}">
+
+    <title>Scheduled Calls</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .scheduled-calls {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .scheduled-call {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #222;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-side {
+            flex: 1;
+        }
+
+        .right-side {
+            flex: 1;
+            text-align: right;
+        }
+
+        .doctor-name {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .date-info {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .time-left-bar {
+            height: 10px;
+            background-color: #007bff;
+            margin-top: 10px;
+        }
+
+        .record-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .record-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_new.png') }}" alt="Logo" class="logo">
+    <img src="{{ url_for('static', filename='wave.gif') }}" alt="Wave" class="gif">
+    <div class="scheduled-calls">
+        <div class="scheduled-call">
+            <div class="left-side">
+                <h2 class="doctor-name">Dr. Smith</h2>
+                <p class="date-info">Date Assigned: September 30, 2023</p>
+                <p class="date-info">Date Due: October 7, 2023</p>
+            </div>
+            <div class="right-side">
+                <div class="time-left-bar" style="width: 70%;"></div>
+                <p>7 days left</p>
+        
+                <form method="post" action="{{ url_for('record_audio') }}">
+                    <button type="submit" class="record-button" name="action" value="record_audio">Record Audio Now</button>
+                </form>
+                    
+            </div>
+        </div>
+
+        <div class="scheduled-call">
+            <div class="left-side">
+                <h2 class="doctor-name">Dr. Johnson</h2>
+                <p class="date-info">Date Assigned: October 5, 2023</p>
+                <p class="date-info">Date Due: October 12, 2023</p>
+            </div>
+            <div class="right-side">
+                <div class="time-left-bar" style="width: 60%;"></div>
+                <p>7 days left</p>
+                <form method="post" action="{{ url_for('record_audio') }}">
+                    <button type="submit" class="record-button" name="action" value="record_audio">Record Audio Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="scheduled-call">
+            <div class="left-side">
+                <h2 class="doctor-name">Dr. Davis</h2>
+                <p class="date-info">Date Assigned: October 10, 2023</p>
+                <p class="date-info">Date Due: October 17, 2023</p>
+            </div>
+            <div class="right-side">
+                <div class="time-left-bar" style="width: 50%;"></div>
+                <p>7 days left</p>
+                <form method="post" action="{{ url_for('record_audio') }}">
+                    <button type="submit" class="record-button" name="action" value="record_audio">Record Audio Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="scheduled-call">
+            <div class="left-side">
+                <h2 class="doctor-name">Dr. Wilson</h2>
+                <p class="date-info">Date Assigned: October 15, 2023</p>
+                <p class="date-info">Date Due: October 22, 2023</p>
+            </div>
+            <div class="right-side">
+                <div class="time-left-bar" style="width: 40%;"></div>
+                <p>7 days left</p>
+                <form method="post" action="{{ url_for('record_audio') }}">
+                    <button type="submit" class="record-button" name="action" value="record_audio">Record Audio Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("record-button").onclick = function () {
+            location.href = "/record_audio";
+        };
+    </script>
+</body>
+</html>

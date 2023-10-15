@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='record_audio.css') }}">
+
+    <title>Audio Recorder</title>
+    <style>
+        .record-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .record-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_new.png') }}" alt="Logo" class="logo">
+    
+    <img src="{{ url_for('static', filename='wave.gif') }}" alt="Wave" class="gif">
+    <body style="background-color:black;">
+        <h1 style="color: white">Record your audio here</h1>
+    
+    <button class="record-button" id="record-button">Record Audio</button>
+
+    <script>
+        document.getElementById('record-button').addEventListener('click', function () {
+            fetch('/start_recording')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Recording started.');
+                    } else {
+                        console.error('Failed to start recording.');
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
